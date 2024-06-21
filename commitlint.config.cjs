@@ -7,12 +7,12 @@ module.exports = {
   plugins: [
     {
       rules: {
-        "header-case-start-capital": ({ subject }) => {
-          const isValid = /^[A-Z]/.test(subject);
+        "header-case-start-capital": ({ raw }) => {
+          const isValid = /^[A-Z]/.test(raw);
           return [isValid, `commit message must start with a capital letter`];
         },
-        "header-end-period": ({ subject }) => {
-          const isValid = /\.$/.test(subject);
+        "header-end-period": ({ header }) => {
+          const isValid = /\.$/.test(header);
           return [isValid, `commit message must end with a period`];
         },
       },
